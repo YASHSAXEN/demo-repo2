@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major project</title>
+    <link rel="stylesheet" href="/static/compare.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="serachBox">
+            <div class="titleDiv">
+                <h2 class="title">Gemni</h2>
+            </div>
+            <div class="searchDiv">
+                <form  method="post" action="/">
+                    {% csrf_token %}
+                    <input type="text" class="serachBar" name='searched' placeholder="Search Here" value="{{searched}}">
+                    <input class="searchButton" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="contentContainer firstClass">
+            <div class="first">
+                <div class="card">
+                    <div class="header">
+                        <h3>GeM Product</h3>
+                    </div>
+                    <div class="image">
+                        <img loading="lazy" src={{description.0.1}} alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <form class="productName" method="post" action="/compare">
+                            {% csrf_token %}
+                            <button name='productname' type="submit" class="nameofproduct" value={{description.0.0}}>
+                                {{description.0.0}}
+                            </button>
+                        </form>
+                        <div class="productPrice">
+                            <p class="price">₹{{description.0.4}} <del>₹{{description.0.5}}</del></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="card">
+                        <div class="header">
+                            <h3>Flipkart Product</h3>
+                        </div>
+                        <div class="image">
+                            <img loading="lazy" src={{description.1.1}} alt="img">
+                        </div>
+                        <div class="contentDiv">
+                            <form class="productName" method="post" action="/compare">
+                                {% csrf_token %}
+                                <button name='productname' type="submit" class="nameofproduct" value={{description.1.0}}>
+                                    {{description.1.0}}
+                                </button>
+                            </form>
+                            <div class="productPrice">
+                                <p class="price">₹{{description.1.4}} <del>₹{{description.1.5}}</del></p>
+                            </div>
+                        </div>
+                    </div>
+            
+                <!-- <div class="card">
+                    <div class="image">
+                        <img src="https://assets-mkpbg.gem.gov.in/img/othe/3088134/c7/0b/cynix1.jpg.6613bac70b.999x185x185.jpg	" alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <div class="productName">
+                            <h3 class="namepr">
+                                CYNIX Intel Core i5 10400 8 GB/ 500 GB HDD/ DOS	
+                            </h3>
+                        </div>
+                        <div class="productPrice">
+                            <p class="price">₹9,000.00 <del>₹100,000.00</del></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="https://assets-mkpbg.gem.gov.in/img/othe/3088134/c7/0b/cynix1.jpg.6613bac70b.999x185x185.jpg	" alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <div class="productName">
+                            <h3 class="namepr">
+                                CYNIX Intel Core i5 10400 8 GB/ 500 GB HDD/ DOS	
+                            </h3>
+                        </div>
+                        <div class="productPrice">
+                            <p class="price">₹9,000.00 <del>₹100,000.00</del></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="https://assets-mkpbg.gem.gov.in/img/othe/3088134/c7/0b/cynix1.jpg.6613bac70b.999x185x185.jpg	" alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <div class="productName">
+                            <h3 class="namepr">
+                                CYNIX Intel Core i5 10400 8 GB/ 500 GB HDD/ DOS	
+                            </h3>
+                        </div>
+                        <div class="productPrice">
+                            <p class="price">₹9,000.00 <del>₹100,000.00</del></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="https://assets-mkpbg.gem.gov.in/img/othe/3088134/c7/0b/cynix1.jpg.6613bac70b.999x185x185.jpg	" alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <div class="productName">
+                            <h3 class="namepr">
+                                CYNIX Intel Core i5 10400 8 GB/ 500 GB HDD/ DOS	
+                            </h3>
+                        </div>
+                        <div class="productPrice">
+                            <p class="price">₹9,000.00 <del>₹100,000.00</del></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image">
+                        <img src="https://assets-mkpbg.gem.gov.in/img/othe/3088134/c7/0b/cynix1.jpg.6613bac70b.999x185x185.jpg	" alt="img">
+                    </div>
+                    <div class="contentDiv">
+                        <div class="productName">
+                            <h3 class="namepr">
+                                CYNIX Intel Core i5 10400 8 GB/ 500 GB HDD/ DOS	
+                            </h3>
+                        </div>
+                        <div class="productPrice">
+                            <p class="price">₹9,000.00 <del>₹100,000.00</del></p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
